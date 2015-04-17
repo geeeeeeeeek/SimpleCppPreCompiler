@@ -41,9 +41,13 @@ A lab belonging to the OOP course. Don't ever think of using it for complex prep
  ![enter image description here](https://lh3.googleusercontent.com/-AviWVaa9a6Q/VTEByQzShbI/AAAAAAAABsA/_vPd88WU9iU/s0/2.png "2.png")
  
 2. Code fragments are abstracted into three types – **MACRO**, **STATEMENT** and **BLOCK**. They are all inherited from BASEMODEL (model.h). 
-	**STMT** Statements ended with “;”.
-	**MACRO** Preprocessor directives starting with “#”.
-	**BLOCK** The file can be viewed as a BLOCK. if-else, functions, classes are also interpreted into a BLOCK. A BLOCK has two fields – content (optional, if-else conditions, function params) and context vector (STMTs, MACROs, BLOCKs embedded in the block).
+
+	>	**STMT** Statements ended with “;”.
+
+	>	**MACRO** Preprocessor directives starting with “#”.
+
+	>	**BLOCK** The file can be viewed as a BLOCK. if-else, functions, classes are also interpreted into a BLOCK. A BLOCK has two fields – content (optional, if-else conditions, function params) and context vector (STMTs, MACROs, BLOCKs embedded in the block).
+
 
 3. The serialized code is then processed by a Processor (stmtp.h) one after another. There is a def_trans_map in macrop.h, which records macro definitions already met.  macrop.add_macro takes in mcro string and converts it into structured key-value pair. macrop.process process each statement and replace embedded macro identifiers. Other complex directives are handled by stmtp.process.
 
